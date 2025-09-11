@@ -1,0 +1,75 @@
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 0.35rem;
+    outline: 1px solid black;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: 0.6s;
+    cursor: pointer;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0));
+
+}
+
+.card.flip {
+    --rotate-y: 180deg;
+}
+
+.card .front {
+    left: 0;
+    border: 4px solid #880808;
+    border-radius: 0.35rem;
+    background-image: linear-gradient(to bottom right, rgba(228, 205, 69, 1), rgba(238,145,53, 0.8), rgba(234, 144, 63, 0.8));
+}
+
+.card .front, .card .back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card .back {
+    background-color: #1e1e1f;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px 0 5px;
+    border: 4px solid #8f7000;
+    border-radius: 0.35rem;
+}
+
+/* large >= 1024px */
+@media only screen and (max-width: 2000px) {
+    .card, .card .back {
+        width: 180px;
+        height: 352px;
+    }
+}
+
+/* medium >= 768px */
+@media only screen and (max-width:  1370px) {
+    .card, .card .back {
+        width: 155px;
+        height: 302px;
+    }
+}
+
+/* small >= 640px */
+@media only screen and (max-width:  768px) {
+    .card, .card .back {
+        width: 147px;
+        height: 288px;
+    }
+}
+
+/* below small */
+@media only screen and (max-width: 640px) {
+    .card, .card .back {
+        width: 140px;
+        height: 274px;
+    }
+}

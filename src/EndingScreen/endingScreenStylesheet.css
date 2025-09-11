@@ -1,0 +1,80 @@
+.background-image {
+  background-image: url(./EndingScreen/iconsFolder/icons/halfLogo.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 35%;
+}
+
+.fade-in-shade {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7), rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
+.loss {
+    width: 60rem;
+    height: 35rem;
+    display: flex;
+    background-color: #584448;
+}
+
+.win {
+    width: 60rem;
+    height: 35rem;
+    display: flex;
+    background-color: #0099DC;
+}
+
+/* large >= 1024px */
+@media only screen and (max-width: 1280px) {
+    .win, .loss {
+        width: 50rem;
+        height: 30rem;
+    }
+}
+
+/* medium >= 768px */
+@media only screen and (max-width:  1024px) {
+    .win, .loss {
+        width: 40rem;
+        height: 25rem;
+    }
+}
+
+/* small >= 640px */
+@media only screen and (max-width:  768px) {
+    .win, .loss {
+        width: 35rem;
+        height: 22rem;
+    }
+}
+
+/* below small */
+@media only screen and (max-width: 640px) {
+    .win, .loss {
+        width: 30rem;
+        height: 19rem;
+    }
+}
+
+/* below small */
+@media only screen and (max-width: 566px) {
+    .win, .loss {
+        width: 25rem;
+        height: 15rem;
+    }
+}
+
+/* below small */
+@media only screen and (max-width: 495px) {
+    .win, .loss {
+        width: 20rem;
+        height: 13rem;
+    }
+}
+
+/* below small */
+@media only screen and (max-width: 495px) {
+    .win, .loss {
+        width: 18rem;
+        height: 11rem;
+    }
+}
