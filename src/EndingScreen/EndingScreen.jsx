@@ -5,7 +5,7 @@ import MissionResults from './iconsFolder/icons/mission_results_img.png';
 import HomeIcon from './iconsFolder/components/Home';
 import { RestartGameContext, StartAndEndGameContext, ChangeDifficultyContext, CornerFigureContext } from "../ContextCreator";
 import StarAssesment from "./StarAssesment";
-import './EndingScreenStyleSheet.css';
+import './endingScreenStyleSheet.css';
 import RetryIconEndScreen from "./iconsFolder/components/RetryEndScreen";
 
 const EndScreen = forwardRef(({ keyword, toggleDialog, currentScore, highScore, highScoreChanged, imgArrLength }, refModal) => {
