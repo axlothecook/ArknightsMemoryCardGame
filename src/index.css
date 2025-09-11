@@ -1,5 +1,45 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  
+
+@import "tailwindcss";
+
+*::selection {
+  color: none;
+  background: none;
+  overflow: hidden;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --light-grey: #eef1f3;
+  --dark-blue: #0e374e;
+  --btn-blue: #187ff5;
+  --red: #b91c1c;
+  --title-blue: #336075;
+  --grey: #bec2d0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: none;
+}
+
+a {
+  overflow-wrap: break-word;
+}
