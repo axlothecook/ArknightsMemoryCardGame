@@ -42,10 +42,15 @@ const SettingsDialog = forwardRef(({ toggleDialog, difficultyArray, changeDiffic
                         </button>
                     </div>
                 </div>
+                {hasGameStarted && 
+                <div>
+                    <h1 className="max-[640px]:text-xs max-[405px]:text-[9px] text-center">Cannot change difficulty during a game session.</h1>
+                </div>}
                 <div >
                     <button 
                         disabled={hasGameStarted}
-                        className='cursor-pointer p-2 size-fit -skew-x-5 bg-black hover:bg-red-600 text-red-600 hover:text-black'
+                        style={{cursor: (hasGameStarted ? 'not-allowed' : 'pointer')}}
+                        className='p-2 size-fit -skew-x-5 bg-black hover:bg-red-600 text-red-600 hover:text-black'
                         onClick={() => {
                             confirmSettings();
                         }}

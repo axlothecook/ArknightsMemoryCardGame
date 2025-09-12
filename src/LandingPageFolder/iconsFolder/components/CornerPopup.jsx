@@ -4,17 +4,22 @@ import popupOnHover from '../icons/popup-hover.png';
 import popupClicked from '../icons/popup-clicked.png';
 import ArrowPointingDownNoClosure from "./ArrowDownNoClosure";
 import ArrowPointingDownWithClosure from "./ArrowDownWithClosure";
-import { ChangeDifficultyContext, CornerFigureContext, StartAndEndGameContext } from "../../../ContextCreator";
+import { RestartGameContext, ChangeDifficultyContext, CornerFigureContext, StartAndEndGameContext } from "../../../ContextCreator";
 
 const CornerPopup = () => {
     const { closureClicked, setClosureClicked } = useContext(CornerFigureContext);
     const { confirmDifficulty } = useContext(ChangeDifficultyContext); 
     const { status, hasGameStarted } = useContext(StartAndEndGameContext);
+    const { gameRestart } = useContext(RestartGameContext);
     const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         if(status.hasFailed || status.hasWon) setIsHovered(false);
-    }, [status.hasFailed, status.hasWon]);
+        if(gameRestart) {
+            setClosureClicked(false);
+            setIsHovered(false);
+        };
+    }, [gameRestart, status.hasFailed, status.hasWon]);
 
     return (
         <section className="w-fit absolute right-3 bottom-0 max-[450px]:right-1.5">
@@ -60,7 +65,6 @@ const CornerPopup = () => {
                     </div>
                 }
                 
-
                 {closureClicked && 
                     <div className="
                         flex
@@ -100,7 +104,6 @@ const CornerPopup = () => {
                     </div>
                 }
                 
-
                 <div className="flex items-end"
                     onMouseEnter={() => {
                         if(!closureClicked) setIsHovered(true);

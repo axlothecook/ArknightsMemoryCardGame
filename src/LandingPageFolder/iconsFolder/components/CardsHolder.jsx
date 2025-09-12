@@ -17,6 +17,7 @@ const CardsHolder = () => {
     const highScore = useRef(fetchHighScore());
     const highScoreChanged = useRef(false);
     const [flip, setFlip] = useState(false);
+    const [disableClick, setDisableClick] = useState(false);
     let shouldRerun = useRef(true);
     const refModal = useRef(null);
 
@@ -81,6 +82,8 @@ const CardsHolder = () => {
         };
     }, [closureClicked]);
 
+
+
     function clickOnCard(card) {
         if(card.hasBeenClicked) {
             setStatus({
@@ -95,12 +98,16 @@ const CardsHolder = () => {
             let temp = checkForWin();
             if(!temp) {
                 setFlip(true);
-
+                setDisableClick(true);
                 shouldRerun.current = true;
                 
                 setTimeout(() => {
                     setFlip(false);
                 }, 1000);
+
+                setTimeout(() => {
+                    setDisableClick(false);
+                }, 1500);
 
             } else {
                 calculateSuccess();
@@ -179,9 +186,15 @@ const CardsHolder = () => {
                     </div>
                     <div className='max-w-[450px]  md:max-w-[850px] xl:max-w-[1513px] flex flex-row justify-center flex-wrap gap-5 sm:gap-6 lg:gap-10'>
                         {cardsArray.map((item) => (
-                            <Card key={item.url} link={item.url} flip={flip} onClick={() => {
-                                clickOnCard(item);
-                            }}/>
+                            <Card 
+                                key={item.url} 
+                                link={item.url} 
+                                flip={flip} 
+                                disableClick={disableClick}
+                                onClick={() => {
+                                    clickOnCard(item);
+                                }}
+                            />
                         ))}
                     </div>
                 </>

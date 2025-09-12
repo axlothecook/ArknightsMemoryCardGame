@@ -1,5 +1,5 @@
 import './Settings.css';
-import { useState, useRef, useContext } from 'react';
+import { useRef, useContext } from 'react';
 import RetryIcon from "./iconsFolder/components/Retry";
 import SettingsIcon from "./iconsFolder/components/SettingsIcon";
 import SettingsDialog from './SettingsPopup';
@@ -8,7 +8,7 @@ import { RestartGameContext, ChangeDifficultyContext, StartAndEndGameContext } f
 const Settings = () => {
     const difficultyArray = ['Easy', 'Medium', 'Hard', 'Special'];
     const { setGameRestart } = useContext(RestartGameContext);
-    const { confirmDifficulty, setConfirmDifficulty } = useContext(ChangeDifficultyContext);
+    const { setConfirmDifficulty } = useContext(ChangeDifficultyContext);
     const { hasGameStarted } = useContext(StartAndEndGameContext);
     const dialogRef = useRef(null);
     let index = useRef(0);
@@ -37,8 +37,7 @@ const Settings = () => {
     function confirmSettings() {
         setConfirmDifficulty(index.current);
         localStorage.setItem('difficulty', JSON.stringify(index.current));
-        console.log('new difficulty: ' + index.current);
-    }
+    };
 
     return (
         <div className='flex flex-1'>

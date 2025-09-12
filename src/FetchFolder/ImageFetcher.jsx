@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react";
 
-// localStorage.clear();
-
 const fetchImagesFromStorage = () => JSON.parse(localStorage.getItem('imgArr')) || [];
 
 const useImage = (currentDifficulty) => {
@@ -17,16 +15,10 @@ const useImage = (currentDifficulty) => {
     let storageArray = fetchImagesFromStorage();
     let desiredLength = (currentDifficulty === 3) ? 19 : (6 * currentDifficulty) + 6;
 
-    // console.log('storage array:');
-    // console.log(storageArray);
-
     if(!storageArray.length) {
         arrayToRender.current = [ ...easyDifficultyCharacterArray];
 
     } else if((desiredLength === storageArray.length) || (desiredLength === (storageArray.length + 1))) {
-
-        // console.log('desiredLength are & SA length are equal');
-
         shouldRefetch.current = false;
         loading.current = false;
         imagesArray.current = [...storageArray];
@@ -36,8 +28,6 @@ const useImage = (currentDifficulty) => {
 
     } else if(desiredLength > storageArray.length) {
         let tempResults;
-
-        console.log('we need more than what we have');
 
         if(desiredLength === 19) {
             tempResults = 19 - storageArray.length;
@@ -58,9 +48,6 @@ const useImage = (currentDifficulty) => {
         };
 
     } else if(desiredLength < storageArray.length) {
-
-        console.log('we have more than what we need');
-
         shouldRefetch.current = false;
         loading.current = false;
         let tempResults = storageArray.length - desiredLength;
@@ -113,10 +100,6 @@ const useImage = (currentDifficulty) => {
     }, [arrayToRender, counter, currentDifficulty]);
     
     localStorage.setItem('imgArr', JSON.stringify(imagesArray.current));
-
-    // console.log('returning array:');
-    // console.log(imagesArray.current);
-    // console.log('------------------------------------')
 
     return { imagesArray, loading, error }
 };

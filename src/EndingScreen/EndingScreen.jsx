@@ -31,7 +31,7 @@ const EndScreen = forwardRef(({ keyword, toggleDialog, currentScore, highScore, 
             >
                 <div className= "fade-in-shade w-[50%] flex grow"> 
                     <div className="background-image mr-auto size-full">
-                        <div className="flex flex-1 flex-col lg:gap-6 sm:gap-4 max-[640px]:gap-3.5 max-[566px]:gap-2.5 max-[495px]:gap-2 w-[85%] ml-auto sm:mt-10 max-sm:mt-4">
+                        <div className="flex flex-1 flex-col lg:gap-6 sm:gap-4 max-[640px]:gap-3.5 max-[566px]:gap-2 max-[495px]:gap-[5px] w-[85%] ml-auto sm:mt-10 max-sm:mt-4">
                             <img src={MissionResults} />
                             <div className="flex justify-start gap-3"> 
                                 {starArray.current.map((item) => (
