@@ -2,17 +2,17 @@ import Originium from '../icons/originium.png';
 import '../../landingPageStyle.css';
 import Tilt from 'react-parallax-tilt';
 
-const Card = ({ link, flip, disableClick, onClick }) => {
+const Card = ({ link, flip, disableClick, onClick, onImageError }) => {
     return (
         <Tilt>
-            <div 
-                className={`card ${flip ? 'flip' : ''}`} 
-                disabled={disableClick} 
+            <div
+                className={`card ${flip ? 'flip' : ''}`}
+                disabled={disableClick}
                 onClick={() => {
                     if(!disableClick) onClick();
                 }}>
                 <div className="front">
-                    <img src={link}  />
+                    <img src={link} onError={onImageError} />
                 </div>
 
                 <div className="back">

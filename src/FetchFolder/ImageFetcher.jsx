@@ -1,6 +1,15 @@
 import { useEffect, useRef } from "react";
 
-const fetchImagesFromStorage = () => JSON.parse(localStorage.getItem('imgArr')) || [];
+const PORTRAIT_BASE_URL = 'https://penguacestergonenemypresslabdbdareprtsterradragonsheets.stinggy.com/cn/arts/charportraits';
+
+const fetchImagesFromStorage = () => {
+    try {
+        const parsed = JSON.parse(localStorage.getItem('imgArr'));
+        return Array.isArray(parsed) ? parsed : [];
+    } catch {
+        return [];
+    }
+};
 
 const useImage = (currentDifficulty) => {
     const easyDifficultyCharacterArray = ['char_250_phatom_1', 'char_293_thorns_1', 'char_103_angel_1', 'char_291_aglina_1', 'char_1035_wisdel_1', 'char_1016_agoat2_1'];
@@ -62,31 +71,21 @@ const useImage = (currentDifficulty) => {
 
 
     useEffect(() => {
-        const fetchData = async() => {
+        const buildImages = () => {
             shouldRefetch.current = false;
             try {
-                const promisedImages = arrayToRender.current.map((url) => 
-                    fetch(`https://penguacestergonenemypresslabdbdareprts.sanitygone.help/cn/arts/charportraits/${url}.webp`)
-                    .then((response) => {
-                        if(response >= 400) throw new Error(`HTTP error: ${response.error}`);
-                        let obj = {
-                            url: response.url,
-                            hasBeenClicked: false,
-                        };
-                    
-                        return obj;
-                    })
-                );
+                const results = arrayToRender.current.map((url) => ({
+                    url: `${PORTRAIT_BASE_URL}/${url}.webp`,
+                    hasBeenClicked: false,
+                }));
 
-                Promise.all(promisedImages).then((results) => {
-                    counter++;
-                    if(counter !== 2) {
-                        imagesArray.current = [
-                            ...imagesArray.current,
-                            ...results
-                        ]; 
-                    };
-                });
+                counter++;
+                if(counter !== 2) {
+                    imagesArray.current = [
+                        ...imagesArray.current,
+                        ...results
+                    ];
+                };
             } catch (err) {
                 imagesArray.current = null;
                 error.current = err;
@@ -95,7 +94,7 @@ const useImage = (currentDifficulty) => {
             }
         }
 
-        if(shouldRefetch.current) fetchData();
+        if(shouldRefetch.current) buildImages();
 
     }, [arrayToRender, counter, currentDifficulty]);
     

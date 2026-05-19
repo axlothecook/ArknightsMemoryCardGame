@@ -18,6 +18,7 @@ const CardsHolder = () => {
     const highScoreChanged = useRef(false);
     const [flip, setFlip] = useState(false);
     const [disableClick, setDisableClick] = useState(false);
+    const [imgFailed, setImgFailed] = useState(false);
     let shouldRerun = useRef(true);
     const refModal = useRef(null);
 
@@ -152,7 +153,7 @@ const CardsHolder = () => {
     };
 
     return (
-        <div className='flex flex-col items-center justify-center gap-3 md:gap-8'>
+        <div className='relative flex flex-col items-center justify-center gap-3 md:gap-8'>
             {loading.current && 
             <>
                 <h1><b>Cards are loading...</b></h1>
@@ -164,8 +165,10 @@ const CardsHolder = () => {
                     <span class="sr-only">Loading...</span>
                 </div>
             </>} 
-            {error.current && 
-            <div className='flex flex-col items-center gap-7'>
+            {(error.current || imgFailed) &&
+            <div
+                className='absolute inset-0 z-10 flex flex-col items-center justify-center gap-7 p-7'
+                style={{ backgroundColor: '#eee', borderRadius: '20px' }}>
                 <div className='md:w-auto sm:w-65 max-[640px]:w-65 max-[460px]:w-50'>
                     <h1 className='lg:text-2xl text-xl max-[460px]:text-base text-center'>
                         <b>Network Error Happened. Try refreshing the page!</b>
@@ -186,11 +189,12 @@ const CardsHolder = () => {
                     </div>
                     <div className='max-w-[450px]  md:max-w-[850px] xl:max-w-[1513px] flex flex-row justify-center flex-wrap gap-5 sm:gap-6 lg:gap-10'>
                         {cardsArray.map((item) => (
-                            <Card 
-                                key={item.url} 
-                                link={item.url} 
-                                flip={flip} 
+                            <Card
+                                key={item.url}
+                                link={item.url}
+                                flip={flip}
                                 disableClick={disableClick}
+                                onImageError={() => setImgFailed(true)}
                                 onClick={() => {
                                     clickOnCard(item);
                                 }}
