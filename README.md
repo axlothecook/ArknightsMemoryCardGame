@@ -28,6 +28,9 @@ Operator photos are loaded at runtime (website load) from the community fan-made
 this API works - it requires a specific number for each operator. Thus a set roster of unchanging numbers decided during project creation pulls the same operators, despite
 new ones being released in the game and on the origin website. 
 
+## 4th Difficulty
+Last 'Special' difficulty is basically a 'Hard' difficulty, but with a twist, a secret operator, an easter egg with no clues hinting at it.
+
 ## Design
 The project's concept UI were designed in [Figma](https://www.figma.com/design/kkp3LjdiMIIzMkUrA4d6fN/Arknights-Memory-Card-Game?node-id=0-1&m=dev&t=cXDMJ6i1UfidhShl-1)
 
@@ -40,3 +43,21 @@ npm install
 npm run dev
 ```
 3) Open the URL link in the terminal (default `http://localhost:5173`).
+
+
+## Demo photos
+### Landing page:
+[!image](https://github.com/user-attachments/assets/ef654566-bc28-4331-9c9e-3c7d77127565)
+
+### Gameplay example:
+[!image](https://github.com/user-attachments/assets/576cc870-e3e8-4c81-9d8e-9b86b1e7a329)
+
+### Settings:
+[!image](https://github.com/user-attachments/assets/d1094ddf-2f09-4ee6-9b59-a5c26670d1c5)
+
+### End screen 
+Failure example:
+[!image](https://github.com/user-attachments/assets/857a6488-53ab-4f2a-8417-bc824dac6ace)
+
+Success example:
+[!image](https://github.com/user-attachments/assets/5265eb7c-5a07-4309-84d2-ce8bc3b75238)
