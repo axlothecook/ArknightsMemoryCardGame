@@ -50,14 +50,14 @@ npm run dev
 ![image](https://github.com/user-attachments/assets/ef654566-bc28-4331-9c9e-3c7d77127565)
 
 ### Gameplay example:
-[!image](https://github.com/user-attachments/assets/576cc870-e3e8-4c81-9d8e-9b86b1e7a329)
+![image](https://github.com/user-attachments/assets/576cc870-e3e8-4c81-9d8e-9b86b1e7a329)
 
 ### Settings:
-[!image](https://github.com/user-attachments/assets/d1094ddf-2f09-4ee6-9b59-a5c26670d1c5)
+![image](https://github.com/user-attachments/assets/d1094ddf-2f09-4ee6-9b59-a5c26670d1c5)
 
 ### End screen 
 Failure example:
-[!image](https://github.com/user-attachments/assets/857a6488-53ab-4f2a-8417-bc824dac6ace)
+![image](https://github.com/user-attachments/assets/857a6488-53ab-4f2a-8417-bc824dac6ace)
 
 Success example:
-[!image](https://github.com/user-attachments/assets/5265eb7c-5a07-4309-84d2-ce8bc3b75238)
+![image](https://github.com/user-attachments/assets/5265eb7c-5a07-4309-84d2-ce8bc3b75238)
