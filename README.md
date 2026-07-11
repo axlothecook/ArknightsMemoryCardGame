@@ -1,5 +1,5 @@
 # Arknights Memory Card Game
-A memory game themed around **Arknights**, a mobile tower defense cacha game. 'Operators' are Charaters on the cards that the user needs to discern between, in total pf 19.
+A memory game themed around **Arknights**, a mobile tower defense cacha game. 'Operators' are charaters on the cards that the user needs to discern between, in total pf 19.
 
 ## How to play
 
