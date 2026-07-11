@@ -47,7 +47,7 @@ npm run dev
 
 ## Demo photos
 ### Landing page:
-[!image](https://github.com/user-attachments/assets/ef654566-bc28-4331-9c9e-3c7d77127565)
+![image](https://github.com/user-attachments/assets/ef654566-bc28-4331-9c9e-3c7d77127565)
 
 ### Gameplay example:
 [!image](https://github.com/user-attachments/assets/576cc870-e3e8-4c81-9d8e-9b86b1e7a329)
