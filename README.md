@@ -18,9 +18,9 @@ Four difficulty levels change how many operators are in play (easy, medium, hard
 - End screen showing high score so far, this run's score and links to retry or return to home
 
 ## Tech stack
-Framework: [React 19](https://react.dev/)
-Building and server: [Vite](https://vite.dev/) 
-Styling: [Tailwind CSS 4](https://tailwindcss.com/)
+Framework: [React 19](https://react.dev/) <br />
+Building and server: [Vite](https://vite.dev/) <br />
+Styling: [Tailwind CSS 4](https://tailwindcss.com/) <br />
 3D parallax tilt: [react-parallax-tilt](https://mkosir.github.io/react-parallax-tilt/?path=/story/react-parallax-tilt--default)
 
 ## API fetching and limitation
